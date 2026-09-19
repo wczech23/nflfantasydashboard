@@ -25,6 +25,9 @@ final_cols = [
 
 player_stats = player_stats[final_cols]
 
+# filter data table only to regular season weeks
+player_stats = player_stats[player_stats['week'] <= 18]
+
 # creating offset fields
 week_lookup = (
     player_stats[['season', 'week']]
